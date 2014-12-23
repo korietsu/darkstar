@@ -3,20 +3,22 @@
 --  Zedi, while in Animation form 2 (Bars)
 --  Blinkable 1-2 hit, addtional effect stun on hit. 
 ---------------------------------------------
+
 require("/scripts/globals/settings");
 require("/scripts/globals/status");
 require("/scripts/globals/monstertpmoves");
+
 ---------------------------------------------
 function OnMobSkillCheck(target,mob,skill)
 	if(mob:AnimationSub() ~= 2) then
 		return 1;
 	end
-	
+
 	return 0;
 end;
 
 function OnMobWeaponSkill(target, mob, skill)
-	
+
 	local numhits = 2;
 	local accmod = 1;
 	local dmgmod = 1;
@@ -29,5 +31,5 @@ function OnMobWeaponSkill(target, mob, skill)
 
 	target:delHP(dmg);
 	return dmg;
-	
+
 end;

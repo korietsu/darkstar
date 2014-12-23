@@ -11,12 +11,12 @@ function OnMobSkillCheck(target,mob,skill)
 	if(mob:AnimationSub() ~= 3) then
 		return 1;
 	end
-	
+
 	return 0;
 end;
 
 function OnMobWeaponSkill(target, mob, skill)
-	
+
 	local numhits = 2;
 	local accmod = 1;
 	local dmgmod = 1;
@@ -29,5 +29,5 @@ function OnMobWeaponSkill(target, mob, skill)
 
 	target:delHP(dmg);
 	return dmg;
-	
+
 end;

@@ -22,6 +22,7 @@ end;
 -- Randomly change forms
 -----------------------------------
 function onMobFight(mob)
+
 	local randomTime = math.random(15,45);
 	local changeTime = mob:getLocalVar("changeTime");
 
@@ -33,7 +34,6 @@ function onMobFight(mob)
 		mob:setLocalVar("changeTime", mob:getBattleTime());
 	elseif(mob:AnimationSub() == 2 and mob:getBattleTime() - changeTime > randomTime) then
 		local aniChance = math.random(0,1);
-
 		if(aniChance == 0) then
 			mob:AnimationSub(0);
 			mob:setLocalVar("changeTime", mob:getBattleTime());
@@ -45,4 +45,5 @@ function onMobFight(mob)
 		mob:AnimationSub(math.random(0,2));
 		mob:setLocalVar("changeTime", mob:getBattleTime());
 	end
+
 end;

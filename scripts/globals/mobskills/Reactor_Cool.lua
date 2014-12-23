@@ -9,11 +9,11 @@ require("/scripts/globals/monstertpmoves");
 
 ---------------------------------------------------
 
-function OnMobSkillCheck(target,mob,skill)
+function onMobSkillCheck(target,mob,skill)
 	return 0;
 end;
 
-function OnMobWeaponSkill(target, mob, skill)
+function onMobWeaponSkill(target, mob, skill)
 	local typeEffect = EFFECT_ICE_SPIKES;
 	local typeEffect2 = EFFECT_DEFENSE_BOOST;
     local randy = math.random(15,30);

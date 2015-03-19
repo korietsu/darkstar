@@ -16,17 +16,17 @@ require("scripts/zones/Dragons_Aery/TextIDs");
 
 function onInitialize(zone)
 
-if (getServerVar("[POP]Fafhogg")< os.time()) then
-	if(getServerVar("fafnirsToNiddhogg") <= 0) then
+if (GetServerVariable("[POP]Fafhogg")< os.time()) then
+	if(GetServerVariable("fafnirsToNiddhogg") <= 0) then
 		SpawnMob(17408019);
 	else
 		SpawnMob(17408018);
 	end
 end
-if (getServerVar("[POP]Fafhogg") > os.time() and getServerVar("fafnirsToNiddhogg") > 0 ) then
-	GetMobByID(17408018):setRespawnTime(getServerVar("[POP]Fafhogg") - os.time())
+if (GetServerVariable("[POP]Fafhogg") > os.time() and GetServerVariable("fafnirsToNiddhogg") > 0 ) then
+	GetMobByID(17408018):setRespawnTime(GetServerVariable("[POP]Fafhogg") - os.time())
 else
-	GetMobByID(17408019):setRespawnTime(getServerVar("[POP]Fafhogg") - os.time())
+	GetMobByID(17408019):setRespawnTime(GetServerVariable("[POP]Fafhogg") - os.time())
 end
  
 

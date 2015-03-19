@@ -22,13 +22,13 @@ end;
 function onMobDeath(mob, killer)
 
 	killer:addTitle(FAFNIR_SLAYER);
-	if(getServerVar("fafnirsToNiddhogg") > 0) then
+	if(GetServerVariable("fafnirsToNiddhogg") > 0) then
 		respawn = math.random((75600),(86400));
-		fafnirsToNiddhogg = getServerVar("fafnirsToNiddhogg");
-		setServerVar("[POP]Fafhogg", os.time() + respawn);
-		setServerVar("fafnirsToNiddhogg", fafnirsToNiddhogg-1);
+		fafnirsToNiddhogg = GetServerVariable("fafnirsToNiddhogg");
+		SetServerVariable("[POP]Fafhogg", os.time() + respawn);
+		SetServerVariable("fafnirsToNiddhogg", fafnirsToNiddhogg-1);
 		GetMobByID(17408018):setRespawnTime(respawn);
-		DeterMob(17408019,true);
+		DeterMob(17408019,true)
 	else
 		DeterMob(17408018,true)
 		DeterMob(17408019,false)

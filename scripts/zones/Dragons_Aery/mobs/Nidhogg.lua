@@ -37,8 +37,8 @@ function onMobDeath(mob, killer)
 	
 	respawn = math.random((75600),(86400));
 	
-	setServerVar("[POP]Fafhogg", os.time()+respawn);
-	setServerVar("fafnirsToNiddhogg", math.random(4,6));
+	SetServerVariable("[POP]Fafhogg", os.time()+respawn);
+	SetServerVariable("fafnirsToNiddhogg", math.random(4,6));
 	GetMobByID(17408018):setRespawnTime(respawn);
 	DeterMob(17408018,false)
 	DeterMob(17408019,true)

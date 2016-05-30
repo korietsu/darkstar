@@ -1,15 +1,15 @@
 ---------------------------------------------------------------------------------------------------
 -- func: wallhack
--- auth: <Unknown>
 -- desc: Allows the player to walk through walls.
 ---------------------------------------------------------------------------------------------------
 
 cmdprops =
 {
     permission = 1,
-    parameters = ""
+    parameters = "s"
 };
 
-function onTrigger(player)
-    player:setFlag( 0x00000200 );
+function onTrigger(player, target)
+    target = GetPlayerByName(target) or player;
+    target:setFlag( 0x00000200 );
 end

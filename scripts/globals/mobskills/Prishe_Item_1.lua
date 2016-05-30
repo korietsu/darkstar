@@ -1,10 +1,10 @@
 ---------------------------------------------
 --  Prishe Item 1
 ---------------------------------------------
-require("/scripts/globals/settings");
-require("/scripts/globals/status");
-require("/scripts/globals/monstertpmoves");
-require("/scripts/zones/Empyreal_Paradox/TextIDs");
+require("scripts/globals/settings");
+require("scripts/globals/status");
+require("scripts/globals/monstertpmoves");
+require("scripts/zones/Empyreal_Paradox/TextIDs");
 ---------------------------------------------
 function onMobSkillCheck(target,mob,skill)
     return 1;
@@ -18,7 +18,7 @@ function onMobWeaponSkill(target, mob, skill)
         mob:messageText(mob, PRISHE_TEXT + 8, false);
     else
         -- using Daedalus Wing!
-        mob:addTP(100);
+        mob:addTP(1000);
         mob:messageText(mob, PRISHE_TEXT + 9, false);
     end
     return 0;

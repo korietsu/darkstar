@@ -33,55 +33,65 @@ The NavMesh class will load and find paths given a start point and end point.
 #include "../common/showmsg.h"
 #include "../common/mmo.h"
 
+#include <vector>
+#include <memory>
+
 #define MAX_NAV_POLYS 256
 
-static const int NAVMESHSET_MAGIC = 'M'<<24 | 'S'<<16 | 'E'<<8 | 'T'; //'MSET';
+static const int NAVMESHSET_MAGIC = 'M' << 24 | 'S' << 16 | 'E' << 8 | 'T'; //'MSET';
 static const int NAVMESHSET_VERSION = 1;
 
 struct NavMeshSetHeader
 {
-  int magic;
-  int version;
-  int numTiles;
-  dtNavMeshParams params;
+    int magic;
+    int version;
+    int numTiles;
+    dtNavMeshParams params;
 };
 
 struct NavMeshTileHeader
 {
-  dtTileRef tileRef;
-  int dataSize;
+    dtTileRef tileRef;
+    int dataSize;
 };
 
 class CNavMesh
 {
-  public:
+public:
     static const int8 ERROR_NEARESTPOLY = -2;
+    static void ToFFXIPos(const position_t* pos, float* out);
+    static void ToFFXIPos(float* out);
+    static void ToFFXIPos(position_t* out);
+    static void ToDetourPos(const position_t* pos, float* out);
+    static void ToDetourPos(float* out);
+    static void ToDetourPos(position_t* out);
 
-  public:
-    CNavMesh();
+public:
+    CNavMesh(uint16 zoneID);
     ~CNavMesh();
 
-    bool load(char* path);
+    bool load(const std::string& path);
     void unload();
 
-    int16 findPath(position_t start, position_t end, position_t* path, uint16 pathSize);
-    int16 findRandomPath(position_t start, float maxRadius, position_t* path, uint16 pathSize);
-
-    // returns true if end point can be seen from start point
-    bool canSeePoint(position_t start, position_t end);
+    std::vector<position_t> findPath(const position_t& start, const position_t& end);
+    std::pair<int16, position_t> findRandomPosition(const position_t& start, float maxRadius);
 
     // returns true if the point is in water
-    bool inWater(position_t point);
+    bool inWater(const position_t& point);
 
-    // validate the integrity of the navmesh
-    bool test(uint16 zoneId);
+    // returns true if no wall was hit
+    bool raycast(const position_t& start, const position_t& end);
 
-  private:
+    bool validPosition(const position_t& position);
+
+private:
     void outputError(uint32 status);
 
-    dtNavMesh* m_navMesh;
-    dtNavMeshQuery* m_navMeshQuery;
-    char* path;
+    uint16 m_zoneID;
+    dtRaycastHit m_hit;
+    dtPolyRef m_hitPath[20];
+    std::unique_ptr<dtNavMesh> m_navMesh;
+    dtNavMeshQuery m_navMeshQuery;
 };
 
 #endif

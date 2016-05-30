@@ -1,6 +1,5 @@
 ---------------------------------------------------------------------------------------------------
 -- func: pardon
--- auth: Loraunt :: Modded by atom0s.
 -- desc: Pardons a player from jail. (Mordion Gaol)
 ---------------------------------------------------------------------------------------------------
 
@@ -23,7 +22,7 @@ function onTrigger(player, target)
         return;
     end
 
-    if (targ:getVar( 'inJail' ) == 1) then
+    if (targ:getVar( 'inJail' ) >= 1) then
         local message = string.format( '%s is pardoning %s from jail.', player:getName(), targ:getName() );
         printf( message );
 

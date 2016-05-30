@@ -3,14 +3,14 @@
 -- Additional effect: Enmity Down. Chance of effect varies with TP.
 ---------------------------------------------------
 
-require("/scripts/globals/settings");
-require("/scripts/globals/status");
-require("/scripts/globals/monstertpmoves");
+require("scripts/globals/settings");
+require("scripts/globals/status");
+require("scripts/globals/monstertpmoves");
 
 ---------------------------------------------------
 
 function onMobSkillCheck(target,mob,skill)
-	return 0;
+    return 0;
 end;
 
 function onMobWeaponSkill(target, mob, skill)
@@ -27,6 +27,6 @@ function onMobWeaponSkill(target, mob, skill)
     MobPhysicalStatusEffectMove(mob, target, skill, typeEffect, 10, 3, 120);
     mob:resetEnmity(target);
 
-	target:delHP(dmg);
-	return dmg;
+    target:delHP(dmg);
+    return dmg;
 end;

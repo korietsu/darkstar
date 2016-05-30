@@ -8,9 +8,9 @@
 --  Notes:
 ---------------------------------------------
 
-require("/scripts/globals/settings");
-require("/scripts/globals/status");
-require("/scripts/globals/monstertpmoves");
+require("scripts/globals/settings");
+require("scripts/globals/status");
+require("scripts/globals/monstertpmoves");
 
 ---------------------------------------------
 
@@ -20,11 +20,11 @@ end;
 
 function onMobWeaponSkill(target, mob, skill)
 
-	local message = MSG_MISS;
-	local typeEffect = EFFECT_PARALYSIS;
+    local message = MSG_MISS;
+    local typeEffect = EFFECT_PARALYSIS;
 
-	skill:setMsg(MobGazeMove(mob, target, typeEffect, 25, 0, 120));
+    skill:setMsg(MobGazeMove(mob, target, typeEffect, 25, 0, 120));
 
-	return typeEffect;
+    return typeEffect;
 
 end;

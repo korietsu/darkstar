@@ -6,9 +6,9 @@
 --  2-3 Shadows
 --  Range: Unknown
 ---------------------------------------------
-require("/scripts/globals/settings");
-require("/scripts/globals/status");
-require("/scripts/globals/monstertpmoves");
+require("scripts/globals/settings");
+require("scripts/globals/status");
+require("scripts/globals/monstertpmoves");
 
 ---------------------------------------------
 function onMobSkillCheck(target,mob,skill)
@@ -23,7 +23,9 @@ function onMobWeaponSkill(target, mob, skill)
     local info = MobPhysicalMove(mob,target,skill,numhits,accmod,dmgmod,TP_NO_EFFECT);
     local dmg = MobFinalAdjustments(info.dmg,mob,skill,target,MOBSKILL_PHYSICAL,MOBPARAM_SLASH,MOBPARAM_2_SHADOW);
 
+    local typeEffect = EFFECT_STUN;
+
+    MobPhysicalStatusEffectMove(mob, target, skill, typeEffect, 1, 0, 3);
     target:delHP(dmg);
-    MobStatusEffectMove(mob, target, EFFECT_STUN, 1, 0, 3);
     return dmg;
 end;

@@ -1,10 +1,10 @@
 require("scripts/globals/settings");
 
 local homepoints = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,
-		26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,
-		51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,
-		76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,
-		101,102,103,104,105,106,107,108,109,110,111,112,113};
+        26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,
+        51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,
+        76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,
+        101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116};
 
 --paramNum bit x y z rotation zone cost
 homepoints[0]   = { 1,  1, -85.554,      1, -64.554,  45, 230,  500}; -- Southern San d'Oria #1
@@ -36,7 +36,7 @@ homepoints[25]  = { 1, 26,       9,     -2,       0,   0, 241,  500}; -- Windurs
 homepoints[26]  = { 1, 27,     107,     -5,     -56,   0, 241,  500}; -- Windurst Woods #2     
 homepoints[27]  = { 1, 28,     -92,     -5,      62,   0, 241,  500}; -- Windurst Woods #3     
 homepoints[28]  = { 1, 29,      74,     -7,    -139,   0, 241,  500}; -- Windurst Woods #4     
-homepoints[29]  = { 1, 20,      -6,      3,       0,   0, 243,  500}; -- Ru'Lude Gardens #1    
+homepoints[29]  = { 1, 30,      -6,      3,       0,   0, 243,  500}; -- Ru'Lude Gardens #1    
 homepoints[30]  = { 1, 31,      53,      9,     -57,   0, 243,  500}; -- Ru'Lude Gardens #2    
 homepoints[31]  = { 1, 32,     -67,      6,     -25,   1, 243,  500}; -- Ru'Lude Gardens #3    
 homepoints[32]  = { 2,  1,     -99,      0,     167,   0, 244,  500}; -- Upper Jeuno #1          
@@ -68,13 +68,13 @@ homepoints[57]  = { 2, 26,     -80,     46,      62,   0, 160, 1000}; -- Den of 
 homepoints[58]  = { 2, 27,    -554,    -70,      66,   0, 162, 1000}; -- Castle Zvahl Keep #1    
 homepoints[59]  = { 2, 28,       5,    -42,     526,   0, 130, 1000}; -- Ru'Aun Gardens #1       
 homepoints[60]  = { 2, 29,    -499,    -42,     167,   0, 130, 1000}; -- Ru'Aun Gardens #2       
-homepoints[61]  = { 2, 20,    -312,    -42,    -422,   0, 130, 1000}; -- Ru'Aun Gardens #3       
+homepoints[61]  = { 2, 30,    -312,    -42,    -422,   0, 130, 1000}; -- Ru'Aun Gardens #3       
 homepoints[62]  = { 2, 31,     500,    -42,     158,   0, 130, 1000}; -- Ru'Aun Gardens #4       
 homepoints[63]  = { 2, 32,     305,    -42,    -427,   0, 130, 1000}; -- Ru'Aun Gardens #5       
 homepoints[64]  = { 3,  1,      -1,    -27,     107,   0,  26,  500}; -- Tavnazian Safehold #1     
 homepoints[65]  = { 3,  2,     -21,      0,     -21,   0,  50,  500}; -- Aht Urhgan Whitegate #1   
 homepoints[66]  = { 3,  3,     -20,      0,     -25,   0,  53,  500}; -- Nashmau #1                
-homepoints[67]  = { 3,  4,       0,      0,       0,   0,  48,  500}; -- Al Zahbi #1     
+-- homepoints[67]  = { 3,  4,       0,      0,       0,   0,  48,  500}; -- Al Zahbi #1    // Doesn't exist related to BG Wiki
 homepoints[68]  = { 3,  5,     -85,      1,     -66,   0,  80,  500}; -- Southern San d'Oria [S] #1
 homepoints[69]  = { 3,  6,    -293,    -10,    -102,   0,  87,  500}; -- Bastok Markets [S] #1     
 homepoints[70]  = { 3,  7,     -32,     -5,     131,   0,  94,  500}; -- Windurst Waters [S] #1    
@@ -90,17 +90,17 @@ homepoints[79]  = { 3, 16,      64,    -96,     461,   0,   5, 1000}; -- Uleguer
 homepoints[80]  = { 3, 17,    -220,     -1,     -62,   0,   5, 1000}; -- Uleguerand Range #5       
 homepoints[81]  = { 3, 18,    -200,    -10,     342,   0,   7, 1000}; -- Attohwa Chasm #1          
 homepoints[82]  = { 3, 19,     -58,     40,      14,  64,   9, 1000}; -- Pso'Xja #1                
-homepoints[83]  = { 3, 20,       0,      0,       0,   0,  12, 1000}; -- Newton Movalpolos #1      
-homepoints[84]  = { 3, 21,       0,      0,       0,   0,  30, 1000}; -- Riveren - Site #A01 #1    
+homepoints[83]  = { 3, 20,     445,     27,     -22,   0,  12, 1000}; -- Newton Movalpolos #1      
+homepoints[84]  = { 3, 21,     189,      0,     362,   0,  30, 1000}; -- Riveren - Site #A01 #1  // Location not verified from retail
 homepoints[85]  = { 3, 22,       7,      0,     709, 192,  33, 1000}; -- Al'Taieu #1               
 homepoints[86]  = { 3, 23,    -532,      0,     447, 128,  33, 1000}; -- Al'Taieu #2               
 homepoints[87]  = { 3, 24,     569,      0,     410, 192,  33, 1000}; -- Al'Taieu #3               
 homepoints[88]  = { 3, 25,     -12,      0,    -288, 192,  34, 1000}; -- Grand Palace of Hu'Xzoi #1
 homepoints[89]  = { 3, 26,    -426,      0,     368, 224,  35, 1000}; -- The Garden of Ru'Hmet #1  
-homepoints[90]  = { 3, 27,       0,      0,       0,   0,  61, 1000}; -- Mount Zhayolm #1          
+homepoints[90]  = { 3, 27,       -540.844,      -4.000,       70.809,   74,  61, 1000}; -- Mount Zhayolm #1  // No valid location
 homepoints[91]  = { 3, 28,    -303,     -8,     526,   0, 113, 1000}; -- Cape Terrigan #1          
-homepoints[92]  = { 3, 29,       0,      0,       0,   0, 153, 1000}; -- The Boyahda Tree #1       
-homepoints[93]  = { 3, 20,     182,     34,     -62, 223, 160, 1000}; -- Den of Rancor #2          
+homepoints[92]  = { 3, 29,      88,    -15,    -217,   0, 153, 1000}; -- The Boyahda Tree #1       
+homepoints[93]  = { 3, 30,     182,     34,     -62, 223, 160, 1000}; -- Den of Rancor #2
 homepoints[94]  = { 3, 31,     102,      0,     269, 191, 204, 1000}; -- Fei'Yin #2                
 homepoints[95]  = { 3, 32,     -63,     50,      81, 192, 205, 1000}; -- Ifrit's Cauldron #1       
 homepoints[96]  = { 4,  1,     573,      9,    -500,   0, 208, 1000}; -- Quicksand Caves #2      
@@ -118,9 +118,13 @@ homepoints[107] = { 4, 12,    -108,     -6,     108, 192,  50,  500}; -- Aht Urh
 homepoints[108] = { 4, 13,     -99,      0,     -68,   0,  50,  500}; -- Aht Urhgan Whitegate #4 
 homepoints[109] = { 4, 14,      32,      0,    -164,  32, 256,  500}; -- Western Adoulin #2      
 homepoints[110] = { 4, 15,     -51,      0,     -96,  96, 257,  500}; -- Eastern Adoulin #2      
-homepoints[111] = { 4, 16,     223,    -13,    -254,   0, 137, 1000}; -- Xarcabard [S] #1        
-homepoints[112] = { 4, 17,       0,      0,       0,   0, 281, 1000}; -- Leafallia #1            
-homepoints[113] = { 4, 18,       0,      0,       0,   0, 155, 1000}; -- *Castle Zvahl Keep [S] #1
+homepoints[111] = { 4, 16,     223,    -13,    -254,   0, 137, 1000}; -- Xarcabard [S] #1
+homepoints[112] = { 4, 17,       5.539,      -0.434,       8.133,   73, 281, 1000}; -- Leafallia #1  // on your right when you enter.
+homepoints[113] = { 4, 18,       66,      -70,       -554,   128, 155, 1000}; -- *Castle Zvahl Keep [S] #1  // same location as in the present
+homepoints[114] = { 4, 19,       -65,     -17.5, 563,   224, 25, 1000}; -- Misareaux Coast #1 
+homepoints[115] = { 4, 20,       -212,     -21,  93,    64, 126, 500}; -- Qufim Island #1
+-- homepoints[116]  = { 4,  21,       0,      0,       0,   0,  276,  1000}; -- Inner Ra'Kaznar #1    // next to the Sinister Reign NPC and Ra'Kaznar Turris
+
 
 local freeHpTeleGroups = { 1, 2, 3, 4, 5, 6, 7, 8};
 
@@ -134,115 +138,115 @@ freeHpTeleGroups[7] = { 41, 104}; -- Norg
 freeHpTeleGroups[8] = { 42, 105}; -- Rabao
 
 function homepointMenu( player, csid, hpIndex)
-	
-	if( HOMEPOINT_HEAL == 1) then
-		player:addHP(player:getMaxHP());
-		player:addMP(player:getMaxMP());
-	end
+    
+    if ( HOMEPOINT_HEAL == 1) then
+        player:addHP(player:getMaxHP());
+        player:addMP(player:getMaxMP());
+    end
 
-	if( HOMEPOINT_TELEPORT == 1) then
-		
-		if( homepoints[hpIndex] == nil) then return; end -- Check for valid hpIndex
+    if ( HOMEPOINT_TELEPORT == 1) then
+        
+        if ( homepoints[hpIndex] == nil) then return; end -- Check for valid hpIndex
 
-		player:setLocalVar("currentHpIndex", hpIndex + 1);
+        player:setLocalVar("currentHpIndex", hpIndex + 1);
 
-		local HpTeleportMask1 = bit.bor( bit.lshift( player:getVar("HpTeleportMask1a"), 16), player:getVar("HpTeleportMask1b"));
-		local HpTeleportMask2 = bit.bor( bit.lshift( player:getVar("HpTeleportMask2a"), 16), player:getVar("HpTeleportMask2b"));
-		local HpTeleportMask3 = bit.bor( bit.lshift( player:getVar("HpTeleportMask3a"), 16), player:getVar("HpTeleportMask3b"));
-		local HpTeleportMask4 = bit.bor( bit.lshift( player:getVar("HpTeleportMask4a"), 16), player:getVar("HpTeleportMask4b"));
+        local HpTeleportMask1 = bit.bor( bit.lshift( player:getVar("HpTeleportMask1a"), 16), player:getVar("HpTeleportMask1b"));
+        local HpTeleportMask2 = bit.bor( bit.lshift( player:getVar("HpTeleportMask2a"), 16), player:getVar("HpTeleportMask2b"));
+        local HpTeleportMask3 = bit.bor( bit.lshift( player:getVar("HpTeleportMask3a"), 16), player:getVar("HpTeleportMask3b"));
+        local HpTeleportMask4 = bit.bor( bit.lshift( player:getVar("HpTeleportMask4a"), 16), player:getVar("HpTeleportMask4b"));
 
-		-- Register new homepoint?
-		local newHp = 0;
-		if( homepoints[hpIndex][1] == 1) then
-			if( bit.rshift( bit.lshift( HpTeleportMask1, 32 - homepoints[hpIndex][2]), 31) == 0) then
-				newHp = 0x10000; -- This value causes the "You have registered a new home point!" dialog to display
-				
-				-- Update the homepoint teleport mask with the new location
-				HpTeleportMask1 = bit.bor( HpTeleportMask1, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
+        -- Register new homepoint?
+        local newHp = 0;
+        if ( homepoints[hpIndex][1] == 1) then
+            if ( bit.rshift( bit.lshift( HpTeleportMask1, 32 - homepoints[hpIndex][2]), 31) == 0) then
+                newHp = 0x10000; -- This value causes the "You have registered a new home point!" dialog to display
+                
+                -- Update the homepoint teleport mask with the new location
+                HpTeleportMask1 = bit.bor( HpTeleportMask1, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
 
-				-- Save new mask to database
-				player:setVar("HpTeleportMask1a", bit.rshift( HpTeleportMask1, 16));
-				player:setVar("HpTeleportMask1b", bit.rshift( bit.lshift( HpTeleportMask1, 16), 16));
-			end
-		elseif(  homepoints[hpIndex][1] == 2) then
-			if( bit.rshift( bit.lshift( HpTeleportMask2, 32 - homepoints[hpIndex][2]), 31) == 0) then
-				newHp = 0x10000;
-				
-				HpTeleportMask2 = bit.bor( HpTeleportMask2, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
+                -- Save new mask to database
+                player:setVar("HpTeleportMask1a", bit.rshift( HpTeleportMask1, 16));
+                player:setVar("HpTeleportMask1b", bit.rshift( bit.lshift( HpTeleportMask1, 16), 16));
+            end
+        elseif (  homepoints[hpIndex][1] == 2) then
+            if ( bit.rshift( bit.lshift( HpTeleportMask2, 32 - homepoints[hpIndex][2]), 31) == 0) then
+                newHp = 0x10000;
+                
+                HpTeleportMask2 = bit.bor( HpTeleportMask2, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
 
-				player:setVar("HpTeleportMask2a", bit.rshift( HpTeleportMask2, 16));
-				player:setVar("HpTeleportMask2b", bit.rshift( bit.lshift( HpTeleportMask2, 16), 16));
-			end
-		elseif(  homepoints[hpIndex][1] == 3) then
-			if( bit.rshift( bit.lshift( HpTeleportMask3, 32 - homepoints[hpIndex][2]), 31) == 0) then
-				newHp = 0x10000;
-				
-				HpTeleportMask3 = bit.bor( HpTeleportMask3, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
+                player:setVar("HpTeleportMask2a", bit.rshift( HpTeleportMask2, 16));
+                player:setVar("HpTeleportMask2b", bit.rshift( bit.lshift( HpTeleportMask2, 16), 16));
+            end
+        elseif (  homepoints[hpIndex][1] == 3) then
+            if ( bit.rshift( bit.lshift( HpTeleportMask3, 32 - homepoints[hpIndex][2]), 31) == 0) then
+                newHp = 0x10000;
+                
+                HpTeleportMask3 = bit.bor( HpTeleportMask3, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
 
-				player:setVar("HpTeleportMask3a", bit.rshift( HpTeleportMask3, 16));
-				player:setVar("HpTeleportMask3b", bit.rshift( bit.lshift( HpTeleportMask3, 16), 16));
-			end
-		elseif(  homepoints[hpIndex][1] == 4) then
-			if( bit.rshift( bit.lshift( HpTeleportMask4, 32 - homepoints[hpIndex][2]), 31) == 0) then
-				newHp = 0x10000;
-				
-				HpTeleportMask4 = bit.bor( HpTeleportMask4, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
+                player:setVar("HpTeleportMask3a", bit.rshift( HpTeleportMask3, 16));
+                player:setVar("HpTeleportMask3b", bit.rshift( bit.lshift( HpTeleportMask3, 16), 16));
+            end
+        elseif (  homepoints[hpIndex][1] == 4) then
+            if ( bit.rshift( bit.lshift( HpTeleportMask4, 32 - homepoints[hpIndex][2]), 31) == 0) then
+                newHp = 0x10000;
+                
+                HpTeleportMask4 = bit.bor( HpTeleportMask4, bit.lshift( 1, homepoints[hpIndex][2] - 1)); 
 
-				player:setVar("HpTeleportMask4a", bit.rshift( HpTeleportMask4, 16));
-				player:setVar("HpTeleportMask4b", bit.rshift( bit.lshift( HpTeleportMask4, 16), 16));
-			end
-		end
+                player:setVar("HpTeleportMask4a", bit.rshift( HpTeleportMask4, 16));
+                player:setVar("HpTeleportMask4b", bit.rshift( bit.lshift( HpTeleportMask4, 16), 16));
+            end
+        end
 
-		player:startEvent( csid, 0, HpTeleportMask1, HpTeleportMask2, HpTeleportMask3, HpTeleportMask4, player:getGil(), 4095, hpIndex + newHp);
-	else
-		player:PrintToPlayer( "Home point teleports are currently disabled on this server.");
-		player:startEvent( csid, 0, 0, 0, 0, 0, player:getGil(), 4095, hpIndex);
-	end
+        player:startEvent( csid, 0, HpTeleportMask1, HpTeleportMask2, HpTeleportMask3, HpTeleportMask4, player:getGil(), 4095, hpIndex + newHp);
+    else
+        player:PrintToPlayer( "Home point teleports are currently disabled on this server.");
+        player:startEvent( csid, 0, 0, 0, 0, 0, player:getGil(), 4095, hpIndex);
+    end
 end;
 
 function hpTeleport( player, option)
 
-	if( option == 2 or option > 0x10000 and option < 0x7F0003) then
-		local hpIndex = bit.rshift( option, 16); -- Calculate hpIndex based on option selected
-		
-		local teleportCost = homepoints[hpIndex][8];
-		if( freeHpTeleport( player, hpIndex)) then
-			teleportCost = 0;
-		end
+    if ( option == 2 or option > 0x10000 and option < 0x7F0003) then
+        local hpIndex = bit.rshift( option, 16); -- Calculate hpIndex based on option selected
+        
+        local teleportCost = homepoints[hpIndex][8];
+        if ( freeHpTeleport( player, hpIndex)) then
+            teleportCost = 0;
+        end
 
-		player:delGil(teleportCost);
-		player:setLocalVar("currentHpIndex", 0);
-		player:setPos( homepoints[hpIndex][3], homepoints[hpIndex][4], homepoints[hpIndex][5], homepoints[hpIndex][6], homepoints[hpIndex][7]);
-	end
+        player:delGil(teleportCost);
+        player:setLocalVar("currentHpIndex", 0);
+        player:setPos( homepoints[hpIndex][3], homepoints[hpIndex][4], homepoints[hpIndex][5], homepoints[hpIndex][6], homepoints[hpIndex][7]);
+    end
 end;
 
 function freeHpTeleport( player, hpIndex)
 
-	local currentHpIndex = player:getLocalVar("currentHpIndex") - 1;
+    local currentHpIndex = player:getLocalVar("currentHpIndex") - 1;
 
-	for x = 1, 20 do
-		if( freeHpTeleGroups[x] ~= nil) then
-			for y = 1, 20 do
-				if( freeHpTeleGroups[x][y] ~= nil) then
-					if( freeHpTeleGroups[x][y] == currentHpIndex) then
-						for z = 1, 20 do
-							if( freeHpTeleGroups[x][z] ~= nil) then
-								if( freeHpTeleGroups[x][z] == hpIndex) then
-									return true;
-								end
-							else
-								break;
-							end
-						end					
-					end
-				else
-					break;
-				end
-			end
-		else
-			break;
-		end
-	end
+    for x = 1, 20 do
+        if ( freeHpTeleGroups[x] ~= nil) then
+            for y = 1, 20 do
+                if ( freeHpTeleGroups[x][y] ~= nil) then
+                    if ( freeHpTeleGroups[x][y] == currentHpIndex) then
+                        for z = 1, 20 do
+                            if ( freeHpTeleGroups[x][z] ~= nil) then
+                                if ( freeHpTeleGroups[x][z] == hpIndex) then
+                                    return true;
+                                end
+                            else
+                                break;
+                            end
+                        end                    
+                    end
+                else
+                    break;
+                end
+            end
+        else
+            break;
+        end
+    end
 
-	return false;
+    return false;
 end;

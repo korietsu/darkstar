@@ -36,6 +36,7 @@ x64/
 *.vspscc
 *.vssscc
 .builds
+*.pyc
 
 # Visual C++ cache files
 ipch/
@@ -43,11 +44,16 @@ ipch/
 *.ncb
 *.opensdf
 *.sdf
+*.opendb
+*.VC.db
 
 # Visual Studio profiler
 *.psess
 *.vsp
 *.vspx
+
+# Visual Studio Analyzer
+*.lastcodeanalysis*
 
 # Guidance Automation Toolkit
 *.gpState
@@ -143,3 +149,11 @@ src/common/stamp-h1
 
 # Misc, such as vim swap files
 *.sw?
+
+navmeshes/*.nav
+tags
+log/DSP.leaks
+
+#Lua Developement Tools project files
+.metadata/**
+.project

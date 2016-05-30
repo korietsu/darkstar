@@ -3,14 +3,14 @@
 -- End Eald'Narche ZM16 (phase 2) teleport
 ---------------------------------------------------
 
-require("/scripts/globals/settings");
-require("/scripts/globals/status");
-require("/scripts/globals/monstertpmoves");
+require("scripts/globals/settings");
+require("scripts/globals/status");
+require("scripts/globals/monstertpmoves");
 
 ---------------------------------------------------
 
 function onMobSkillCheck(target,mob,skill)
-	return 1;
+    return 1;
 end;
 
 function onMobWeaponSkill(target, mob, skill)

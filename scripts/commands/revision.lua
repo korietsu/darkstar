@@ -1,13 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 -- func: revision
--- auth: Whasf
 -- desc: Sends the Git revision to the player
 ---------------------------------------------------------------------------------------------------
 
 cmdprops =
 {
     permission = 0,
-	parameters = ""
+    parameters = ""
 };
 
 function onTrigger(player)

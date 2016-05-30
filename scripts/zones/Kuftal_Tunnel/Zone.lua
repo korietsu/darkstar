@@ -17,20 +17,20 @@ require("scripts/globals/weather");
 
 function onInitialize(zone)
 
-    local tomes = {17490318,17490319,17490320,17490321};
+    local tomes = {17490321,17490322,17490323,17490324};
     
     SetGroundsTome(tomes);
 
     -- Guivre
     SetRespawnTime(17490234, 900, 10800);
     
-    UpdateTreasureSpawnPoint(17490297);
+    UpdateTreasureSpawnPoint(17490300);
     
 end;
 
------------------------------------		
--- onConquestUpdate		
------------------------------------		
+-----------------------------------        
+-- onConquestUpdate        
+-----------------------------------        
 
 function onConquestUpdate(zone, updatetype)
     local players = zone:getPlayers();
@@ -40,53 +40,53 @@ function onConquestUpdate(zone, updatetype)
     end
 end;
 
------------------------------------		
--- onZoneIn		
------------------------------------		
+-----------------------------------        
+-- onZoneIn        
+-----------------------------------        
 
 function onZoneIn(player,prevZone)
-	local cs = -1;	
-	if ((player:getXPos() == 0) and (player:getYPos() == 0) and (player:getZPos() == 0)) then	
-		player:setPos(20.37,-21.104,275.782,46);
-	end	
-	return cs;	
+    local cs = -1;    
+    if ((player:getXPos() == 0) and (player:getYPos() == 0) and (player:getZPos() == 0)) then    
+        player:setPos(20.37,-21.104,275.782,46);
+    end    
+    return cs;    
 end;
 
------------------------------------		
--- onRegionEnter		
------------------------------------		
+-----------------------------------        
+-- onRegionEnter        
+-----------------------------------        
 
-function onRegionEnter(player,region)	
-end;	
+function onRegionEnter(player,region)    
+end;    
 
------------------------------------	
--- onEventUpdate	
------------------------------------	
+-----------------------------------    
+-- onEventUpdate    
+-----------------------------------    
 
-function onEventUpdate(player,csid,option)	
-	--printf("CSID: %u",csid);
-	--printf("RESULT: %u",option);
-end;	
+function onEventUpdate(player,csid,option)    
+    --printf("CSID: %u",csid);
+    --printf("RESULT: %u",option);
+end;    
 
------------------------------------	
--- onEventFinish	
------------------------------------	
+-----------------------------------    
+-- onEventFinish    
+-----------------------------------    
 
-function onEventFinish(player,csid,option)	
-	--printf("CSID: %u",csid);
-	--printf("RESULT: %u",option);
-end;	
+function onEventFinish(player,csid,option)    
+    --printf("CSID: %u",csid);
+    --printf("RESULT: %u",option);
+end;    
 
------------------------------------	
--- onZoneWeatherChange	
------------------------------------	
+-----------------------------------    
+-- onZoneWeatherChange    
+-----------------------------------    
 
 function onZoneWeatherChange(weather)
 
-	if(weather == WEATHER_WIND or weather == WEATHER_GALES) then
-		GetNPCByID(17490277):setAnimation(9); -- Rock Up
-	else
-		GetNPCByID(17490277):setAnimation(8); -- Rock Down
-	end
-	
+    if (weather == WEATHER_WIND or weather == WEATHER_GALES) then
+        GetNPCByID(17490280):setAnimation(9); -- Rock Up
+    else
+        GetNPCByID(17490280):setAnimation(8); -- Rock Down
+    end
+    
 end;

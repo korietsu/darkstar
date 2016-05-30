@@ -27,6 +27,7 @@
 
 #include "shop_items.h"
 #include "../entities/charentity.h"
+#include "../trade_container.h"
 
 
 CShopItemsPacket::CShopItemsPacket(CCharEntity * PChar)
@@ -45,13 +46,13 @@ CShopItemsPacket::CShopItemsPacket(CCharEntity * PChar)
 
             i = 0;
             this->size = 0x04;
-            memset(data, 0, sizeof(data));
+            memset(data + 4, 0, PACKET_SIZE - 8);
         }
 		this->size += 0x06;
 
-		WBUFL(data,((i*12)+0x08)-4) = PChar->Container->getQuantity(slotID);
-		WBUFW(data,((i*12)+0x0C)-4) = PChar->Container->getItemID(slotID);
-		WBUFB(data,((i*12)+0x0E)-4) = slotID;
+		WBUFL(data,((i*12)+0x08)) = PChar->Container->getQuantity(slotID);
+		WBUFW(data,((i*12)+0x0C)) = PChar->Container->getItemID(slotID);
+		WBUFB(data,((i*12)+0x0E)) = slotID;
         i++;
 	}
 }

@@ -208,7 +208,7 @@ typedef int32 intptr;
 //////////////////////////////////////////////////////////////////////////
 // some redefine of function redefines for some Compilers
 //////////////////////////////////////////////////////////////////////////
-#if defined(_MSC_VER) || defined(__BORLANDC__)
+#if (defined(_MSC_VER) && _MSC_VER < 1900) || defined(__BORLANDC__)
 #define strcasecmp			stricmp
 #define strncasecmp			strnicmp
 #define strncmpi			strnicmp
@@ -216,7 +216,7 @@ typedef int32 intptr;
 #if defined(_MSC_VER) && _MSC_VER < 1400
 #define vsnprintf			_vsnprintf
 #endif
-#else
+#elif !defined(_MSC_VER)
 #define strcmpi				strcasecmp
 #define stricmp				strcasecmp
 #define strncmpi			strncasecmp
@@ -329,5 +329,12 @@ typedef char bool;
 		#define va_copy(dst, src) ((void) memcpy(&(dst), &(src), sizeof(va_list)))
 	#endif
 #endif
+
+#include <chrono>
+
+using namespace std::chrono_literals;
+using server_clock = std::chrono::steady_clock;
+using time_point = server_clock::time_point;
+using duration = server_clock::duration;
 
 #endif /* _CBASETYPES_H_ */

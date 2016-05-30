@@ -1,6 +1,5 @@
 ---------------------------------------------------------------------------------------------------
 -- func: @giveitem <player> <itemId> <amount> <aug1> <v1> <aug2> <v2> <aug3> <v3> <aug4> <v4>
--- auth: Link :: Modded by atom0s. Modded again by TeoTwawki.
 -- desc: Gives an item to the target player.
 ---------------------------------------------------------------------------------------------------
 
@@ -34,6 +33,6 @@ function onTrigger(player, target, itemId, amount, aug0, aug0val, aug1, aug1val,
     else
         targ:addItem( itemId, amount, aug0, aug0val, aug1, aug1val, aug2, aug2val, aug3, aug3val );
         targ:messageSpecial( ITEM_OBTAINED, itemId );
-        player:PrintToPlayer( string.format( "Gave player Item with ID of '%u' ", itemId ) );
+        player:PrintToPlayer( string.format( "Gave player '%s' Item with ID of '%u' ", target, itemId ) );
     end
 end;

@@ -1,5 +1,4 @@
 -------------------------------------------------
---  Author: Ezekyel
 --  Logging functions
 --  Info from:
 --      http://wiki.ffxiclopedia.org/wiki/Logging
@@ -14,17 +13,17 @@ require("scripts/globals/status");
 
 -- Zone, {npcid,npcid,npcid,..}
 local npcid = {2,  {16785769,16785770,16785771,16785772},                   -- Carpenter's Landing
-               24, {16875849,16875850,16875851,16875852,16875853,16875854}, -- Lufaise Meadows
-               25, {16879965,16879966,16879967,16879968,16879969,16879970}, -- Misareaux Coast
+               24, {16875879,16875880,16875881,16875882,16875883,16875884}, -- Lufaise Meadows
+               25, {16879968,16879969,16879970,16879971,16879972,16879973}, -- Misareaux Coast
                65, {17044010,17044011,17044012,17044013,17044014,17044015}, -- Mamook
-               79, {17101311,17101312,17101313,17101314,17101315,17101316}, -- Caedarva Mire
+               79, {17101314,17101315,17101316,17101317,17101318,17101319}, -- Caedarva Mire
                81, {17109782,17109783,17109784,17109785,17109786,17109787}, -- East Ronfaure [S]
                82, {17113901,17113902,17113903,17113904,17113905,17113906}, -- Jugner Forest [S]
                96, {17171239,17171240,17171241,17171242,17171243,17171244}, -- Fort Karugo-Narugo [S]
                101,{17191526,17191527,17191528,17191529,17191530,17191531}, -- East Ronfaure
                104,{17203860,17203861,17203862,17203863,17203864,17203865}, -- Jugner Forest
                118,{17261171,17261172,17261173,17261174,17261175,17261176}, -- Buburimu Peninsula
-               123,{17281625,17281626,17281627,17281628,17281629,17281630}, -- Yuhtunga Jungle
+               123,{17281626,17281627,17281628,17281629,17281630,17281631}, -- Yuhtunga Jungle
                124,{17285671,17285672,17285673,17285674,17285675,17285676}, -- Yhoator Jungle
                140,{17350970,17350971,17350972,17350973}};                  -- Ghelsba Outpost
 -- Zone, {itemid,drop rate,itemid,drop rate,..}
@@ -49,7 +48,7 @@ function startLogging(player,zone,npc,trade,csid)
         local broke = hatchetBreak(player,trade);
         local item = getLoggingItem(player,zone);
 
-        if(player:getFreeSlotsCount() == 0) then
+        if (player:getFreeSlotsCount() == 0) then
             full = 1;
         else
             full = 0;

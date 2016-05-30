@@ -1,3 +1,4 @@
+
 /*
 MySQL Data Transfer
 Source Host: localhost
@@ -48,18 +49,18 @@ INSERT INTO `traits` VALUES ('1','accuracy bonus','19','60','2','25','22','WOTG'
 INSERT INTO `traits` VALUES ('1','accuracy bonus','19','60','2','26','22','WOTG');
 INSERT INTO `traits` VALUES ('1','accuracy bonus','19','80','3','25','35','ABYSSEA');
 INSERT INTO `traits` VALUES ('1','accuracy bonus','19','80','3','26','35','ABYSSEA');
-INSERT INTO `traits` VALUES ('2','evasion bonus','6','10','1','69','10',null);
-INSERT INTO `traits` VALUES ('2','evasion bonus','6','30','2','69','22',null);
-INSERT INTO `traits` VALUES ('2','evasion bonus','6','50','3','69','35',null);
-INSERT INTO `traits` VALUES ('2','evasion bonus','6','70','4','69','48',null);
-INSERT INTO `traits` VALUES ('2','evasion bonus','6','76','5','69','60','ABYSSEA');
-INSERT INTO `traits` VALUES ('2','evasion bonus','18','20','1','69','10','TOAU');
-INSERT INTO `traits` VALUES ('2','evasion bonus','18','40','2','69','22','TOAU');
-INSERT INTO `traits` VALUES ('2','evasion bonus','18','60','3','69','35','TOAU');
-INSERT INTO `traits` VALUES ('2','evasion bonus','18','80','4','69','48','TOAU');
-INSERT INTO `traits` VALUES ('2','evasion bonus','19','15','1','69','10','WOTG');
-INSERT INTO `traits` VALUES ('2','evasion bonus','19','45','2','69','22','WOTG');
-INSERT INTO `traits` VALUES ('2','evasion bonus','19','75','3','69','35','WOTG');
+INSERT INTO `traits` VALUES ('2','evasion bonus','6','10','1','68','10',null);
+INSERT INTO `traits` VALUES ('2','evasion bonus','6','30','2','68','22',null);
+INSERT INTO `traits` VALUES ('2','evasion bonus','6','50','3','68','35',null);
+INSERT INTO `traits` VALUES ('2','evasion bonus','6','70','4','68','48',null);
+INSERT INTO `traits` VALUES ('2','evasion bonus','6','76','5','68','60','ABYSSEA');
+INSERT INTO `traits` VALUES ('2','evasion bonus','18','20','1','68','10','TOAU');
+INSERT INTO `traits` VALUES ('2','evasion bonus','18','40','2','68','22','TOAU');
+INSERT INTO `traits` VALUES ('2','evasion bonus','18','60','3','68','35','TOAU');
+INSERT INTO `traits` VALUES ('2','evasion bonus','18','80','4','68','48','TOAU');
+INSERT INTO `traits` VALUES ('2','evasion bonus','19','15','1','68','10','WOTG');
+INSERT INTO `traits` VALUES ('2','evasion bonus','19','45','2','68','22','WOTG');
+INSERT INTO `traits` VALUES ('2','evasion bonus','19','75','3','68','35','WOTG');
 INSERT INTO `traits` VALUES ('3','attack bonus','1','30','1','23','10',null);
 INSERT INTO `traits` VALUES ('3','attack bonus','1','30','1','24','10',null);
 INSERT INTO `traits` VALUES ('3','attack bonus','1','91','2','23','22','ABYSSEA');
@@ -173,7 +174,8 @@ INSERT INTO `traits` VALUES ('18','dual wield','19','40','2','259','15','ABYSSEA
 INSERT INTO `traits` VALUES ('18','dual wield','19','60','3','259','25','ABYSSEA');
 INSERT INTO `traits` VALUES ('18','dual wield','19','80','4','259','30','ABYSSEA');
 INSERT INTO `traits` VALUES ('19','treasure hunter','6','15','1','303','1',null);
-INSERT INTO `traits` VALUES ('20','gilfinder','6','5','1','0','0',null);
+INSERT INTO `traits` VALUES ('20','gilfinder','6','5','1','0','0',null); -- Not implemented. Remove this note when it is.
+INSERT INTO `traits` VALUES ('20','gilfinder','6','85','2','0','0','ABYSSEA'); -- 2nd tier does NOT have its own separate ID in client.
 INSERT INTO `traits` VALUES ('21','alertness','11','5','1','0','0',null);
 INSERT INTO `traits` VALUES ('22','stealth','13','5','1','358','3',null); -- ROTZ
 INSERT INTO `traits` VALUES ('23','martial arts','2','1','1','173','80',null);
@@ -230,12 +232,12 @@ INSERT INTO `traits` VALUES ('24','clear mind','20','76','5','71','15','ABYSSEA'
 INSERT INTO `traits` VALUES ('24','clear mind','20','76','5','295','2','ABYSSEA');
 INSERT INTO `traits` VALUES ('24','clear mind','20','96','6','71','18','ABYSSEA');
 INSERT INTO `traits` VALUES ('24','clear mind','20','96','6','295','3','ABYSSEA');
-INSERT INTO `traits` VALUES ('25','shield mastery','5','87','10','485','1',null);
-INSERT INTO `traits` VALUES ('25','shield mastery','5','97','20','485','2',null);
-INSERT INTO `traits` VALUES ('25','shield mastery','7','25','10','485','1',null);
-INSERT INTO `traits` VALUES ('25','shield mastery','7','50','20','485','2',null);
-INSERT INTO `traits` VALUES ('25','shield mastery','7','75','30','485','3',null);
-INSERT INTO `traits` VALUES ('25','shield mastery','7','96','40','485','4','ABYSSEA');
+INSERT INTO `traits` VALUES ('25','shield mastery','5','87','10','485','10',null);
+INSERT INTO `traits` VALUES ('25','shield mastery','5','97','20','485','20',null);
+INSERT INTO `traits` VALUES ('25','shield mastery','7','25','10','485','10',null);
+INSERT INTO `traits` VALUES ('25','shield mastery','7','50','20','485','20',null);
+INSERT INTO `traits` VALUES ('25','shield mastery','7','75','30','485','30',null);
+INSERT INTO `traits` VALUES ('25','shield mastery','7','96','40','485','40','ABYSSEA');
 INSERT INTO `traits` VALUES ('32','beast killer','9','70','1','230','8',null);
 INSERT INTO `traits` VALUES ('33','plantoid killer','9','60','1','229','8',null);
 INSERT INTO `traits` VALUES ('34','vermin killer','9','10','1','224','8',null);
@@ -310,8 +312,19 @@ INSERT INTO `traits` VALUES ('59','resist slow','19','20','1','250','2','WOTG');
 INSERT INTO `traits` VALUES ('59','resist slow','19','55','2','250','3','WOTG');
 INSERT INTO `traits` VALUES ('59','resist slow','19','81','3','250','5','ABYSSEA');
 INSERT INTO `traits` VALUES ('60','resist charm','0','0','1','252','2',null);
+INSERT INTO `traits` VALUES ('63','resist amnesia','9','15','1','253','2','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','9','35','2','253','3','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','9','55','3','253','5','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','9','75','4','253','6','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','17','30','1','253','2','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','17','50','2','253','3','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','17','70','3','253','5','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','18','15','1','253','2','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','18','35','2','253','3','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','18','55','3','253','5','SOA');
+INSERT INTO `traits` VALUES ('63','resist amnesia','18','75','4','253','6','SOA');
 INSERT INTO `traits` VALUES ('64','treasure hunter ii','6','45','2','303','1',null);
-INSERT INTO `traits` VALUES ('65','gilfinder ii','0','0','1','0','0',null);
+INSERT INTO `traits` VALUES ('65','treasure hunter iii','6','90','3','303','1','ABYSSEA');
 INSERT INTO `traits` VALUES ('66','kick attacks','2','51','1','292','10',null);
 INSERT INTO `traits` VALUES ('66','kick attacks','2','71','2','292','13',null);
 INSERT INTO `traits` VALUES ('66','kick attacks','2','96','3','292','15','ABYSSEA');

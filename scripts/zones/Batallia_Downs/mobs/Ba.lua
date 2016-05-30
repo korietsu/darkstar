@@ -1,15 +1,15 @@
 -----------------------------------
 -- Area: Batallia Downs
--- MOB:  Ba
+--  MOB: Ba
 -----------------------------------
 
-require("/scripts/globals/fieldsofvalor");
+require("scripts/globals/fieldsofvalor");
 
 -----------------------------------
 -- onMobDeath
 -----------------------------------
 
-function onMobDeath(mob,killer)
-	checkRegime(killer,mob,15,2);
-	checkRegime(killer,mob,73,2);
+function onMobDeath(mob, player, isKiller)
+    checkRegime(player,mob,15,2);
+    checkRegime(player,mob,73,2);
 end;

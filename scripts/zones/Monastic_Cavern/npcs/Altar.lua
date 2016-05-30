@@ -28,13 +28,13 @@ function onTrigger(player,npc)
    if (circleOfTime == QUEST_ACCEPTED and player:getVar("circleTime") >= 7) then
        if (player:hasKeyItem(STAR_RING1) and player:hasKeyItem(MOON_RING)) then
            if (player:getVar("circleTime") == 7) then
-               SpawnMob(17391804,180):updateEnmity(player); -- Spawn bugaboo
+               SpawnMob(17391804,180):updateClaim(player); -- Spawn bugaboo
            elseif (player:getVar("circleTime") == 8) then
                player:startEvent(0x03); -- Show final CS  
            end  
        end
-	 else
-    	player:messageSpecial(ALTAR)     
+     else
+        player:messageSpecial(ALTAR)     
    end
 end;
 

@@ -232,6 +232,7 @@ int main (int argc, char **argv)
 		arg_v = argv;
 	}
 
+    log_init(argc, argv);
 	malloc_init();
 	set_server_type();
 	display_title();
@@ -243,11 +244,11 @@ int main (int argc, char **argv)
 	do_init(argc,argv);
 	fd_set rfd;
 	{// Main runtime cycle
-		int next;
+		duration next;
 
 		while (runflag) 
 		{
-			next = CTaskMgr::getInstance()->DoTimer(gettick_nocache());
+            next = CTaskMgr::getInstance()->DoTimer(server_clock::now());
 			do_sockets(&rfd,next);
 		}
 	}

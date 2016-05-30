@@ -25,6 +25,9 @@
 
 #include <string.h> 
 
+#include "../universal_container.h"
+#include "../item_container.h"
+
 #include "../lua/luautils.h"
 
 #include "../packets/caught_fish.h"
@@ -103,7 +106,7 @@ void StartFishing(CCharEntity* PChar)
 			
 	if ((WeaponItem == nullptr) ||
 	   !(WeaponItem->isType(ITEM_WEAPON)) ||
-		(WeaponItem->getSkillType() != SKILL_FSH)) 
+		(WeaponItem->getSkillType() != SKILL_FISHING)) 
 	{													
 		// сообщение: "You can't fish without a rod in your hands"
 
@@ -116,7 +119,7 @@ void StartFishing(CCharEntity* PChar)
 							
 	if ((WeaponItem == nullptr) ||
 	   !(WeaponItem->isType(ITEM_WEAPON)) ||
-		(WeaponItem->getSkillType() != SKILL_FSH))
+		(WeaponItem->getSkillType() != SKILL_FISHING))
 	{
 		// сообщение: "You can't fish without bait on the hook"	
 
@@ -153,7 +156,7 @@ bool CheckFisherLuck(CCharEntity* PChar)
 
 	DSP_DEBUG_BREAK_IF(WeaponItem == nullptr);
 	DSP_DEBUG_BREAK_IF(WeaponItem->isType(ITEM_WEAPON) == false);
-	DSP_DEBUG_BREAK_IF(WeaponItem->getSkillType() != SKILL_FSH);
+	DSP_DEBUG_BREAK_IF(WeaponItem->getSkillType() != SKILL_FISHING);
 
 	uint16 RodID = WeaponItem->getID();
 
@@ -161,11 +164,11 @@ bool CheckFisherLuck(CCharEntity* PChar)
 							
 	DSP_DEBUG_BREAK_IF(WeaponItem == nullptr);
 	DSP_DEBUG_BREAK_IF(WeaponItem->isType(ITEM_WEAPON) == false);
-	DSP_DEBUG_BREAK_IF(WeaponItem->getSkillType() != SKILL_FSH);
+	DSP_DEBUG_BREAK_IF(WeaponItem->getSkillType() != SKILL_FISHING);
 
 	uint16 LureID = WeaponItem->getID();
 
-	int32 FishingChance = WELL512::irand()%100;
+	int32 FishingChance = dsprand::GetRandomNumber(100);
 
 	if (FishingChance <= 20)
 	{
@@ -238,7 +241,7 @@ bool CheckFisherLuck(CCharEntity* PChar)
 		if( ret != SQL_ERROR && Sql_NumRows(SqlHandle) != 0)
 		{
 			int32 FisherLuck = 0;
-			int32 FishingChance = WELL512::irand()%1000;
+            int32 FishingChance = dsprand::GetRandomNumber(1000);
 
 			while(Sql_NextRow(SqlHandle) == SQL_SUCCESS) 
 			{
@@ -271,7 +274,7 @@ bool LureLoss(CCharEntity* PChar, bool RemoveFly)
 
 	DSP_DEBUG_BREAK_IF(PLure == nullptr);
 	DSP_DEBUG_BREAK_IF(PLure->isType(ITEM_WEAPON) == false);
-	DSP_DEBUG_BREAK_IF(PLure->getSkillType() != SKILL_FSH);
+	DSP_DEBUG_BREAK_IF(PLure->getSkillType() != SKILL_FISHING);
 
 	if (!RemoveFly &&
 	   ( PLure->getStackSize() == 1))

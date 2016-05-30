@@ -3,9 +3,9 @@
 -- Enhances defense.
 ---------------------------------------------------
 
-require("/scripts/globals/settings");
-require("/scripts/globals/status");
-require("/scripts/globals/monstertpmoves");
+require("scripts/globals/settings");
+require("scripts/globals/status");
+require("scripts/globals/monstertpmoves");
 
 ---------------------------------------------------
 
@@ -14,7 +14,7 @@ function onMobSkillCheck(target,mob,skill)
 end;
 
 function onMobWeaponSkill(target, mob, skill)
-	local typeEffect = EFFECT_DEFENSE_BOOST;
+    local typeEffect = EFFECT_DEFENSE_BOOST;
     skill:setMsg(MobBuffMove(mob, typeEffect, 100, 0, 60));
-	return typeEffect;
+    return typeEffect;
 end;

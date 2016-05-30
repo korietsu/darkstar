@@ -1,13 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 -- func: @delspell <spellID> <player>
--- auth: mvd1987, modified by TeoTwawki
 -- desc: Removes a spell from the players spell list.
 ---------------------------------------------------------------------------------------------------
 
 cmdprops =
 {
-	permission = 1,
-	parameters = "i"
+    permission = 1,
+    parameters = "i"
 };
 
 function onTrigger(player, spellId, target)
